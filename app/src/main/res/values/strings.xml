@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Android MVVM Example</string>
+    <string name="dialog_new_memo">New memo</string>
+    <string name="dialog_delete_memo">Delete memo</string>
+    <string name="dialog_add_title">Write title.</string>
+    <string name="dialog_add_text">Write text.</string>
+    <string name="dialog_delete_text">Will you delete this memo?</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_add">Add</string>
+    <string name="dialog_delete">Delete</string>
+</resources>
