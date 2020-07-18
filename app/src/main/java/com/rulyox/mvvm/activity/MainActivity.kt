@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.rulyox.mvvm.adapter.MemoAdapter
 import com.rulyox.mvvm.databinding.ActivityMainBinding
 import com.rulyox.mvvm.handler.MainHandlers
 import com.rulyox.mvvm.memo.Memo
@@ -18,6 +21,7 @@ class MainActivity: AppCompatActivity() {
     }
 
     private val model: MemoViewModel by viewModels()
+    private val memoAdapter = MemoAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,9 +60,16 @@ class MainActivity: AppCompatActivity() {
         setSupportActionBar(binding.mainToolBar)
         binding.handlers = MainHandlers()
 
+        // recycler view
+        binding.mainRecycler.layoutManager = LinearLayoutManager(this)
+        binding.mainRecycler.addItemDecoration(DividerItemDecoration(binding.mainRecycler.context, DividerItemDecoration.VERTICAL))
+        binding.mainRecycler.adapter = memoAdapter
+
+        // when memo list is changed
         model.getMemoList().observe(this, Observer<ArrayList<Memo>>{ memoList ->
 
-
+            memoAdapter.setList(memoList)
+            memoAdapter.notifyDataSetChanged()
 
         })
 
