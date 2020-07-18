@@ -1,5 +1,7 @@
 package com.rulyox.mvvm.handler
 
+import android.app.Activity.RESULT_OK
+import android.content.Intent
 import android.view.View
 import com.rulyox.mvvm.activity.AddActivity
 
@@ -13,6 +15,10 @@ class AddHandlers {
         val title: String = activity.memo.title
         val text: String = activity.memo.text
 
+        val intent = Intent()
+        intent.putExtra("title", title)
+        intent.putExtra("text", text)
+        activity.setResult(RESULT_OK, intent)
         activity.finish()
 
     }
