@@ -13,6 +13,10 @@ import com.rulyox.mvvm.memo.MemoViewModel
 
 class MainActivity: AppCompatActivity() {
 
+    companion object {
+        const val REQUEST_ADD = 1
+    }
+
     private val model: MemoViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +29,9 @@ class MainActivity: AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode == 1) {
+        if(resultCode == RESULT_OK) {
 
-            if(resultCode == RESULT_OK) {
+            if(requestCode == REQUEST_ADD) {
 
                 val title: String? = data?.getStringExtra("title")
                 val text: String? = data?.getStringExtra("text")

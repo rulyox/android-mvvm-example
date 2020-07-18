@@ -13,7 +13,7 @@ class MainHandlers {
         val activity = view.context as MainActivity
 
         val addIntent = Intent(activity, AddActivity::class.java)
-        activity.startActivityForResult(addIntent, 1)
+        activity.startActivityForResult(addIntent, MainActivity.REQUEST_ADD)
 
     }
 
