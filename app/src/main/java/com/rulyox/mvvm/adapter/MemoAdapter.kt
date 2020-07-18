@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rulyox.mvvm.databinding.ItemBinding
+import com.rulyox.mvvm.handler.MainHandlers
 import com.rulyox.mvvm.memo.Memo
 
 class MemoAdapter: RecyclerView.Adapter<MemoAdapter.MemoViewHolder>() {
@@ -34,6 +35,8 @@ class MemoAdapter: RecyclerView.Adapter<MemoAdapter.MemoViewHolder>() {
         val memo = memoList!![position]
 
         viewholder.binding.memo = memo
+        viewholder.binding.position = position
+        viewholder.binding.handlers = MainHandlers()
 
     }
 

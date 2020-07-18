@@ -18,4 +18,14 @@ class MainHandlers {
 
     }
 
+    fun clickItem(view: View, position: Int) {
+
+        if(view.context !is MainActivity) return
+        val activity = view.context as MainActivity
+
+        // open delete dialog
+        activity.openDeleteDialog(position)
+
+    }
+
 }

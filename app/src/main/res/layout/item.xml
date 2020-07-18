@@ -4,6 +4,8 @@
 
     <data>
         <variable name="memo" type="com.rulyox.mvvm.memo.Memo" />
+        <variable name="position" type="int"/>
+        <variable name="handlers" type="com.rulyox.mvvm.handler.MainHandlers" />
     </data>
 
     <LinearLayout
@@ -11,7 +13,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="15dp"
-        android:foreground="?selectableItemBackground" >
+        android:foreground="?selectableItemBackground"
+        android:onClick="@{(view) -> handlers.clickItem(view, position)}" >
 
         <TextView
             android:layout_width="wrap_content"

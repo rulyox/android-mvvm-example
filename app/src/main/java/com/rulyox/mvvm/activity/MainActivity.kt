@@ -3,10 +3,12 @@ package com.rulyox.mvvm.activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.rulyox.mvvm.R
 import com.rulyox.mvvm.adapter.MemoAdapter
 import com.rulyox.mvvm.databinding.ActivityMainBinding
 import com.rulyox.mvvm.handler.MainHandlers
@@ -72,6 +74,27 @@ class MainActivity: AppCompatActivity() {
             memoAdapter.notifyDataSetChanged()
 
         })
+
+    }
+
+    fun openDeleteDialog(position: Int) {
+
+        AlertDialog.Builder(this)
+            .setTitle(R.string.dialog_delete_memo)
+            .setMessage(R.string.dialog_delete_text)
+            .setPositiveButton(R.string.dialog_delete) { dialog, _ ->
+
+                model.deleteMemo(position)
+
+                dialog.dismiss()
+
+            }
+            .setNegativeButton(R.string.dialog_cancel) { dialog, _ ->
+
+                dialog.dismiss()
+
+            }
+            .show()
 
     }
 

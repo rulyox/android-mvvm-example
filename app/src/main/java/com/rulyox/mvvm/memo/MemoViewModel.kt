@@ -23,4 +23,9 @@ class MemoViewModel: ViewModel() {
         loadMemoList()
     }
 
+    fun deleteMemo(position: Int) {
+        MemoStore.delete(position)
+        loadMemoList()
+    }
+
 }
