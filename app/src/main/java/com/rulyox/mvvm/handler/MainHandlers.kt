@@ -1,4 +1,4 @@
-package com.rulyox.mvvm
+package com.rulyox.mvvm.handler
 
 import android.content.Intent
 import android.view.View

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto" >
 
     <data>
-        <variable name="handlers" type="com.rulyox.mvvm.MainHandlers" />
+        <variable name="handlers" type="com.rulyox.mvvm.handler.MainHandlers" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -13,7 +13,6 @@
         android:fitsSystemWindows="true" >
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/mainFab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
