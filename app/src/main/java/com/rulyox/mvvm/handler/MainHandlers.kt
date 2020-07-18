@@ -12,6 +12,7 @@ class MainHandlers {
         if(view.context !is MainActivity) return
         val activity = view.context as MainActivity
 
+        // open add dialog
         val addIntent = Intent(activity, AddActivity::class.java)
         activity.startActivityForResult(addIntent, MainActivity.REQUEST_ADD)
 

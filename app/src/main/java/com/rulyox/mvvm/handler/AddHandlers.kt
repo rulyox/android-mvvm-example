@@ -12,9 +12,11 @@ class AddHandlers {
         if(view.context !is AddActivity) return
         val activity = view.context as AddActivity
 
+        // get written data
         val title: String = activity.memo.title
         val text: String = activity.memo.text
 
+        // send data as result
         val intent = Intent()
         intent.putExtra("title", title)
         intent.putExtra("text", text)

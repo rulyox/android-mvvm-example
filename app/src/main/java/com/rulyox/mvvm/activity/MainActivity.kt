@@ -33,11 +33,13 @@ class MainActivity: AppCompatActivity() {
 
             if(requestCode == REQUEST_ADD) {
 
+                // get data from add dialog
                 val title: String? = data?.getStringExtra("title")
                 val text: String? = data?.getStringExtra("text")
 
                 if(title == null || text == null) return
 
+                // add new memo to model
                 val memo = Memo(MemoStore.getNewId(), title, text)
                 model.addMemo(memo)
 
